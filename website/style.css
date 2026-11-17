@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Crimson+Pro:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap');
+
+/* main font */
+
+:root {
+    --site-font: Baskerville, "Baskerville Old Face", Georgia, "Times New Roman", serif;
+    --body-font: "Source Serif 4", Georgia, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: white;
+    color: #111;
+    font-family: var(--site-font);
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div {
+    font-family: var(--site-font);
+}
+
+/* nav */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 42px 20px 20px;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #777;
+}
+
+.nav-links .active {
+    border-bottom: 1px solid black;
+    padding-bottom: 4px;
+}
+
+/* home */
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+
+.home-photo {
+    width: auto;
+    height: 58vh;
+    max-height: 560px;
+    display: block;
+}
+
+/* about */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    column-gap: 55px;
+    padding: 75px 40px 80px 40px;
+    align-items: start;
+}
+
+.about-text {
+    width: 100%;
+    max-width: 650px;
+    color: #111;
+}
+
+.about-text h1 {
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 55px;
+}
+
+.about-text p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 38px;
+    max-width: 620px;
+}
+
+.about-text strong {
+    font-weight: 600;
+}
+
+.about-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 35px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+}
+
+/* statement */
+
+.font-test {
+    margin-top: 26px;
+    max-width: 560px;
+}
+
+.font-test-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.font-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.font-sample {
+    font-size: 18px;
+    line-height: 1.35;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.font-baskerville {
+    font-family: var(--site-font);
+}
+
+/* work page */
+
+.work-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px 34px;
+    padding: 95px 40px 80px 40px;
+}
+
+.work-item {
+    width: 100%;
+}
+
+.photo-box {
+    width: 100%;
+    height: 430px;
+    background-color: #f4f4f4;
+    border: 1px solid #dedede;
+}
+
+/* contact */
+
+.contact-page {
+    padding: 55px 35px 70px 35px;
+    width: 100%;
+    max-width: none;
+}
+
+.contact-page h1 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.contact-form {
+    width: 100%;
+    font-family: var(--body-font);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.form-group label {
+    font-family: var(--body-font);
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+
+.form-group label span {
+    font-family: var(--body-font);
+    font-size: 14px;
+    color: #777;
+}
+
+.form-group input {
+    width: 100%;
+    max-width: none;
+    height: 44px;
+    border: 1px solid #999;
+    outline: none;
+    background-color: #efeded;
+    font-family: var(--body-font);
+    font-size: 17px;
+    padding: 7px;
+}
+
+.form-group textarea {
+    width: 100%;
+    max-width: none;
+    height: 120px;
+    border: 1px solid #999;
+    outline: none;
+    background-color: #efeded;
+    font-family: var(--body-font);
+    font-size: 17px;
+    padding: 7px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background-color: white;
+    border-color: #777;
+}
+
+.contact-form button {
+    font-family: var(--site-font);
+    font-size: 18px;
+    border: none;
+    background-color: #bfbab8;
+    color: white;
+    padding: 7px 12px;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.contact-form button:hover {
+    background-color: #9e8e77;
+}
+
+/* mobile */
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 24px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .home-page {
+        padding-top: 35px;
+    }
+
+    .home-photo {
+        height: 38vh;
+        max-width: 90%;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        row-gap: 35px;
+        padding: 45px 24px 60px 24px;
+    }
+
+    .about-text h1 {
+        font-size: 32px;
+        margin-bottom: 35px;
+    }
+
+    .about-text p {
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 28px;
+    }
+
+    .about-image {
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+
+    .font-sample {
+        font-size: 17px;
+    }
+
+    .work-page {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 55px 24px;
+    }
+
+    .photo-box {
+        height: 330px;
+    }
+
+    .contact-page {
+        padding: 45px 24px 60px 24px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .contact-page h1 {
+        font-size: 30px;
+    }
+
+    .form-group label {
+        font-size: 17px;
+    }
+
+    .form-group input {
+        height: 42px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .form-group textarea {
+        height: 110px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .contact-form button {
+        font-size: 17px;
+    }
+}
