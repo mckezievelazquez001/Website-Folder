@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Mckenzie Velazquez</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <a class="name" href="index.html">
+            Mckenzie Velazquez
+        </a>
+
+        <div class="nav-links">
+            <a href="artwork.html" class="active">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </nav>
+
+    <main class="gallery-page">
+
+        <h1 id="gallery-title"></h1>
+
+        <div class="slideshow">
+
+            <button class="gallery-arrow previous"
+                onclick="changePhoto(-1)"
+                aria-label="Previous photograph">
+                &#10094;
+            </button>
+
+            <img id="gallery-photo" alt="Gallery photograph">
+
+            <button class="gallery-arrow next"
+                onclick="changePhoto(1)"
+                aria-label="Next photograph">
+                &#10095;
+            </button>
+
+        </div>
+
+        <div id="thumbnails" class="thumbnails"></div>
+
+        <a class="back-link" href="artwork.html">
+            Back to Work
+        </a>
+
+    </main>
+
+    <script>
+
+        const galleries = {
+
+            1: {
+                title: "Color Film",
+                photos: [
+                    "Cradle Me in Light72dpi.jpg",
+                    "72dpiMckenzieVelazquezPrimaryColorBlue copy.jpg",
+                    "73dpiMckenzieVelazquezPrimaryColorRed.jpg",
+                    "dyaln72dpi.jpg",
+                    "dylan 3 72dpi.jpg",
+                    "dylan2 72dpi.jpg"
+                ]
+            }
+
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const series = params.get("series") || "1";
+        const gallery = galleries[series] || galleries[1];
+
+        let currentPhoto = 0;
+
+        document.getElementById("gallery-title").textContent = gallery.title;
+
+        document.title = gallery.title + " - Mckenzie Velazquez";
+
+        function showPhoto(index) {
+
+            currentPhoto = index;
+
+            const photo = document.getElementById("gallery-photo");
+
+            photo.src = gallery.photos[currentPhoto];
+
+            photo.alt = gallery.title + " - Photograph " + (currentPhoto + 1);
+
+            document.querySelectorAll(".thumbnail").forEach((thumb, i) => {
+                thumb.classList.toggle("selected", i === currentPhoto);
+                thumb.setAttribute("aria-pressed", i === currentPhoto);
+            });
+
+        }
+
+        function changePhoto(direction) {
+
+            const nextPhoto =
+                (currentPhoto + direction + gallery.photos.length)
+                % gallery.photos.length;
+
+            showPhoto(nextPhoto);
+
+        }
+
+        gallery.photos.forEach((src, index) => {
+
+            const button = document.createElement("button");
+
+            button.className = "thumbnail";
+
+            button.setAttribute(
+                "aria-label",
+                "View photograph " + (index + 1)
+            );
+
+            const img = document.createElement("img");
+
+            img.src = src;
+            img.alt = "";
+
+            button.appendChild(img);
+
+            button.onclick = () => showPhoto(index);
+
+            document.getElementById("thumbnails").appendChild(button);
+
+        });
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "ArrowLeft") {
+                changePhoto(-1);
+            }
+
+            if (event.key === "ArrowRight") {
+                changePhoto(1);
+            }
+
+        });
+
+        showPhoto(0);
+
+    </script>
+
+</body>
+
+</html>
