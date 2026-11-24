@@ -4,7 +4,6 @@
 :root {
     --site-font: Baskerville, "Baskerville Old Face", Georgia, "Times New Roman", serif;
     --body-font: "Source Serif 4", Georgia, serif;
-    --page-margin: clamp(25px, 4vw, 70px);
 }
 * {
     margin: 0;
@@ -30,12 +29,12 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px var(--page-margin);
-    max-width: 1800px;
+    max-width: 2000px;
     margin: 0 auto;
+    padding: 28px 40px;
 }
 .name {
-    font-size: clamp(30px, 2.5vw, 42px);
+    font-size: clamp(28px, 2.2vw, 40px);
     font-weight: 400;
     color: black;
     text-decoration: none;
@@ -43,11 +42,10 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 }
 .nav-links {
     display: flex;
-    align-items: center;
-    gap: 30px;
+    gap: 28px;
 }
 .nav-links a {
-    font-size: 21px;
+    font-size: 20px;
     color: black;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -65,67 +63,65 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 35px var(--page-margin) 60px;
-    min-height: calc(100svh - 110px);
+    padding: 35px 30px 50px;
 }
 .home-photo {
-    width: 100%;
+    width: 80%;
     height: auto;
-    max-width: min(1200px, 75vw, 105vh);
+    max-width: 1500px;
+    max-height: 82vh;
     object-fit: contain;
 }
 
 /* about */
-/* about */
 .about-section {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
-    gap: 70px;
-    width: 100%;
-    max-width: 1150px;
+    grid-template-columns: 1.1fr 0.9fr;
+    column-gap: clamp(50px, 6vw, 110px);
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 60px 40px 80px;
+    padding: 65px 50px 80px;
     align-items: center;
 }
 .about-text {
     width: 100%;
-    max-width: 550px;
     color: #111;
 }
 .about-text h1 {
-    font-size: 38px;
+    font-size: 36px;
     font-weight: 400;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 .about-text p {
-    font-size: 22px;
+    font-size: clamp(19px, 1.3vw, 23px);
     font-weight: 400;
     line-height: 1.65;
     margin-bottom: 20px;
-    max-width: 100%;
+    max-width: 650px;
 }
 .about-image {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
 }
 .about-image img {
     width: 100%;
-    max-width: 420px;
+    max-width: 440px;
     height: auto;
+    max-height: 75vh;
+    object-fit: contain;
 }
 
 /* work */
 .work-page {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 40px;
+    column-gap: 35px;
     row-gap: 55px;
-    padding: 45px var(--page-margin) 90px;
+    padding: 40px 40px 80px;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1800px;
     margin: 0 auto;
     align-items: start;
 }
@@ -150,10 +146,10 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     opacity: 0.8;
 }
 .work-item h2 {
-    font-size: 27px;
+    font-size: 26px;
     font-weight: 400;
     margin-top: 16px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 .photo-box {
     width: 100%;
@@ -168,14 +164,15 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 /* gallery */
 .gallery-page {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 30px var(--page-margin) 60px;
+    padding: 15px 30px 50px;
 }
 .gallery-page h1 {
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 400;
-    margin-bottom: 25px;
+    text-align: center;
+    margin-bottom: 22px;
 }
 .slideshow {
     position: relative;
@@ -183,13 +180,15 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: clamp(300px, 68vh, 850px);
-    padding: 0 65px;
+    max-width: 1300px;
+    height: 82vh;
+    margin: 0 auto;
+    padding: 0 55px;
 }
 #gallery-photo {
     display: block;
     width: auto;
-    height: auto;
+    height: 100%;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -200,11 +199,12 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     transform: translateY(-50%);
     background: transparent;
     border: none;
-    color: #555;
-    font-size: 23px;
-    padding: 15px;
+    color: #777;
+    font-size: 24px;
+    padding: 12px;
     cursor: pointer;
     z-index: 1;
+    transition: color 0.2s ease;
 }
 .gallery-arrow:hover {
     color: black;
@@ -219,23 +219,24 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 /* thumbnails */
 .thumbnails {
     display: flex;
-    gap: 12px;
+    justify-content: flex-start;
+    gap: 10px;
     width: max-content;
     max-width: 100%;
     overflow-x: auto;
-    margin: 24px auto 0;
-    padding: 5px 0 12px;
+    margin: 15px auto 0;
+    padding: 5px 0 10px;
 }
 .thumbnail {
     flex: 0 0 65px;
     width: 65px;
-    height: 80px;
+    height: 75px;
     padding: 0;
     border: none;
     background: transparent;
     cursor: pointer;
-    opacity: 0.4;
-    transition: opacity 0.2s ease;
+    opacity: 0.35;
+    transition: opacity 0.25s ease;
 }
 .thumbnail img {
     width: 100%;
@@ -246,11 +247,12 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     opacity: 1;
 }
 .back-link {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     color: black;
-    font-size: 18px;
+    font-size: 17px;
     text-decoration: none;
-    margin-top: 35px;
+    margin: 25px auto 0;
 }
 .back-link:hover {
     text-decoration: underline;
@@ -258,7 +260,7 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 
 /* contact */
 .contact-page {
-    padding: 55px var(--page-margin) 90px;
+    padding: 55px 40px 80px;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
@@ -266,7 +268,7 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 .contact-page h1 {
     font-size: 36px;
     font-weight: 400;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 .contact-form {
     width: 100%;
@@ -275,13 +277,13 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     width: 100%;
 }
 .form-group label {
     font-family: var(--body-font);
-    font-size: 18px;
-    margin-bottom: 7px;
+    font-size: 17px;
+    margin-bottom: 6px;
 }
 .form-group label span {
     font-family: var(--body-font);
@@ -290,17 +292,17 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 }
 .form-group input, .form-group textarea {
     width: 100%;
-    border: 1px solid #bbb;
-    border-radius: 0;
+    border: 1px solid #aaa;
     outline: none;
-    background-color: #f5f4f3;
+    background-color: #efeded;
     font-family: var(--body-font);
     font-size: 17px;
-    padding: 12px;
+    padding: 10px;
+    border-radius: 0;
     transition: background-color 0.2s ease;
 }
 .form-group input {
-    height: 48px;
+    height: 46px;
 }
 .form-group textarea {
     height: 160px;
@@ -308,20 +310,20 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 }
 .form-group input:focus, .form-group textarea:focus {
     background-color: white;
-    border-color: #555;
+    border-color: #777;
 }
 .contact-form button {
     font-family: var(--site-font);
-    font-size: 19px;
+    font-size: 18px;
     border: none;
-    background-color: #222;
+    background-color: #bfbab8;
     color: white;
-    padding: 11px 28px;
+    padding: 10px 22px;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 .contact-form button:hover {
-    background-color: #666;
+    background-color: #9e8e77;
 }
 
 /* mobile */
@@ -333,22 +335,22 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
         padding: 24px;
     }
     .name {
-        font-size: 29px;
+        font-size: 28px;
     }
     .nav-links {
-        gap: 22px;
+        gap: 20px;
     }
     .nav-links a {
-        font-size: 19px;
+        font-size: 18px;
     }
     .home-page {
-        min-height: auto;
-        padding: 40px 24px 50px;
+        padding: 40px 20px 30px;
     }
     .home-photo {
         width: 100%;
         height: auto;
         max-width: 100%;
+        max-height: none;
     }
     .about-section {
         grid-template-columns: 1fr;
@@ -357,65 +359,69 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     }
     .about-text h1 {
         font-size: 30px;
-        margin-bottom: 24px;
+        margin-bottom: 25px;
     }
     .about-text p {
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.6;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     .about-image {
         justify-content: center;
-        padding-left: 0;
     }
     .about-image img {
+        width: 85%;
         max-width: 380px;
+        max-height: none;
     }
     .work-page {
         grid-template-columns: 1fr;
         gap: 35px;
-        padding: 40px 24px 60px;
+        padding: 35px 20px 60px;
     }
     .work-item h2 {
-        font-size: 24px;
+        font-size: 23px;
         margin-top: 12px;
     }
     .gallery-page {
-        padding: 30px 15px 45px;
+        padding: 20px 12px 40px;
     }
     .gallery-page h1 {
-        font-size: 28px;
+        font-size: 26px;
         margin-bottom: 20px;
     }
     .slideshow {
-        height: 50vh;
+        height: 72vh;
         padding: 0 28px;
     }
     #gallery-photo {
         width: auto;
-        height: auto;
+        height: 100%;
         max-width: 100%;
         max-height: 100%;
     }
     .gallery-arrow {
         font-size: 18px;
-        padding: 6px;
+        padding: 5px;
     }
     .thumbnails {
         gap: 8px;
-        margin-top: 18px;
+        margin-top: 12px;
     }
     .thumbnail {
-        flex-basis: 55px;
-        width: 55px;
+        flex-basis: 50px;
+        width: 50px;
         height: 65px;
+    }
+    .back-link {
+        font-size: 16px;
+        margin-top: 22px;
     }
     .contact-page {
         padding: 40px 24px 60px;
     }
     .contact-page h1 {
-        font-size: 30px;
-        margin-bottom: 25px;
+        font-size: 28px;
     }
     .form-group label {
         font-size: 17px;
@@ -427,6 +433,6 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
         height: 140px;
     }
     .contact-form button {
-        font-size: 18px;
+        font-size: 17px;
     }
 }
