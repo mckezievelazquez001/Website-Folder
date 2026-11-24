@@ -4,6 +4,7 @@
 :root {
     --site-font: Baskerville, "Baskerville Old Face", Georgia, "Times New Roman", serif;
     --body-font: "Source Serif 4", Georgia, serif;
+    --page-margin: clamp(25px, 4vw, 70px);
 }
 * {
     margin: 0;
@@ -23,15 +24,18 @@ img {
 a, p, h1, h2, h3, h4, h5, h6, span, div {
     font-family: var(--site-font);
 }
+
 /* navigation */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 42px 20px 20px;
+    padding: 30px var(--page-margin);
+    max-width: 1800px;
+    margin: 0 auto;
 }
 .name {
-    font-size: 36px;
+    font-size: clamp(30px, 2.5vw, 42px);
     font-weight: 400;
     color: black;
     text-decoration: none;
@@ -39,10 +43,11 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 }
 .nav-links {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 30px;
 }
 .nav-links a {
-    font-size: 20px;
+    font-size: 21px;
     color: black;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -54,25 +59,30 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 .nav-links .active {
     border-bottom: 1px solid black;
 }
+
 /* homepage */
 .home-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 35px 30px 40px;
+    padding: 35px var(--page-margin) 60px;
+    min-height: calc(100svh - 110px);
 }
 .home-photo {
-    width: 75%;
+    width: 100%;
     height: auto;
-    max-width: min(1400px, 114.8vh);
+    max-width: min(1200px, 75vw, 105vh);
     object-fit: contain;
 }
+
 /* about */
 .about-section {
     display: grid;
-    grid-template-columns: minmax(0, 48fr) minmax(0, 52fr);
-    column-gap: 55px;
-    padding: 75px 40px 80px;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    column-gap: clamp(60px, 8vw, 140px);
+    padding: 65px var(--page-margin) 90px;
+    max-width: 1400px;
+    margin: 0 auto;
     align-items: start;
 }
 .about-text {
@@ -81,37 +91,40 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     color: #111;
 }
 .about-text h1 {
-    font-size: 38px;
+    font-size: 36px;
     font-weight: 400;
-    margin-bottom: 55px;
+    margin-bottom: 32px;
 }
 .about-text p {
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 38px;
-    max-width: 620px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    max-width: 600px;
 }
 .about-image {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 35px;
+    padding-left: 0;
 }
 .about-image img {
     width: 100%;
-    max-width: 500px;
+    max-width: 440px;
     height: auto;
 }
+
 /* work */
 .work-page {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 34px;
+    column-gap: 40px;
     row-gap: 55px;
-    padding: 75px 25px 80px;
+    padding: 45px var(--page-margin) 90px;
     width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
     align-items: start;
 }
 .work-item {
@@ -135,10 +148,10 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     opacity: 0.8;
 }
 .work-item h2 {
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 400;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 16px;
+    margin-bottom: 0;
 }
 .photo-box {
     width: 100%;
@@ -149,15 +162,18 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 .work-item:empty {
     display: none;
 }
+
 /* gallery */
 .gallery-page {
     width: 100%;
-    padding: 20px 25px 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px var(--page-margin) 60px;
 }
 .gallery-page h1 {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 .slideshow {
     position: relative;
@@ -165,13 +181,13 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 75vh;
+    height: clamp(300px, 68vh, 850px);
     padding: 0 65px;
 }
 #gallery-photo {
     display: block;
     width: auto;
-    height: 100%;
+    height: auto;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -183,7 +199,7 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     background: transparent;
     border: none;
     color: #555;
-    font-size: 24px;
+    font-size: 23px;
     padding: 15px;
     cursor: pointer;
     z-index: 1;
@@ -197,6 +213,7 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 .next {
     right: 0;
 }
+
 /* thumbnails */
 .thumbnails {
     display: flex;
@@ -204,13 +221,13 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     width: max-content;
     max-width: 100%;
     overflow-x: auto;
-    margin: 18px auto 0;
+    margin: 24px auto 0;
     padding: 5px 0 12px;
 }
 .thumbnail {
-    flex: 0 0 75px;
-    width: 75px;
-    height: 85px;
+    flex: 0 0 65px;
+    width: 65px;
+    height: 80px;
     padding: 0;
     border: none;
     background: transparent;
@@ -231,20 +248,23 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     color: black;
     font-size: 18px;
     text-decoration: none;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 .back-link:hover {
     text-decoration: underline;
 }
+
 /* contact */
 .contact-page {
-    padding: 55px 35px 70px;
+    padding: 55px var(--page-margin) 90px;
     width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 .contact-page h1 {
     font-size: 36px;
     font-weight: 400;
-    margin-bottom: 18px;
+    margin-bottom: 35px;
 }
 .contact-form {
     width: 100%;
@@ -253,52 +273,55 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     width: 100%;
 }
 .form-group label {
     font-family: var(--body-font);
     font-size: 18px;
-    margin-bottom: 3px;
+    margin-bottom: 7px;
 }
 .form-group label span {
     font-family: var(--body-font);
-    font-size: 14px;
+    font-size: 13px;
     color: #777;
 }
 .form-group input, .form-group textarea {
     width: 100%;
-    border: 1px solid #999;
+    border: 1px solid #bbb;
+    border-radius: 0;
     outline: none;
-    background-color: #efeded;
+    background-color: #f5f4f3;
     font-family: var(--body-font);
     font-size: 17px;
-    padding: 7px;
+    padding: 12px;
+    transition: background-color 0.2s ease;
 }
 .form-group input {
-    height: 44px;
+    height: 48px;
 }
 .form-group textarea {
-    height: 120px;
+    height: 160px;
     resize: vertical;
 }
 .form-group input:focus, .form-group textarea:focus {
     background-color: white;
-    border-color: #777;
+    border-color: #555;
 }
 .contact-form button {
     font-family: var(--site-font);
-    font-size: 18px;
+    font-size: 19px;
     border: none;
-    background-color: #bfbab8;
+    background-color: #222;
     color: white;
-    padding: 7px 12px;
+    padding: 11px 28px;
     cursor: pointer;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 .contact-form button:hover {
-    background-color: #9e8e77;
+    background-color: #666;
 }
+
 /* mobile */
 @media screen and (max-width: 800px) {
     .navbar {
@@ -308,51 +331,51 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
         padding: 24px;
     }
     .name {
-        font-size: 26px;
+        font-size: 29px;
     }
     .nav-links {
-        gap: 16px;
+        gap: 22px;
     }
     .nav-links a {
-        font-size: 18px;
+        font-size: 19px;
     }
     .home-page {
-        padding: 40px 20px 30px;
+        min-height: auto;
+        padding: 40px 24px 50px;
     }
     .home-photo {
         width: 100%;
         height: auto;
         max-width: 100%;
-        max-height: none;
     }
     .about-section {
         grid-template-columns: 1fr;
         row-gap: 35px;
-        padding: 45px 24px 60px;
+        padding: 40px 24px 60px;
     }
     .about-text h1 {
-        font-size: 32px;
-        margin-bottom: 35px;
+        font-size: 30px;
+        margin-bottom: 24px;
     }
     .about-text p {
-        font-size: 17px;
-        line-height: 1.5;
-        margin-bottom: 28px;
+        font-size: 19px;
+        line-height: 1.6;
+        margin-bottom: 20px;
     }
     .about-image {
-        justify-content: flex-start;
+        justify-content: center;
         padding-left: 0;
     }
     .about-image img {
-        max-width: 100%;
+        max-width: 380px;
     }
     .work-page {
         grid-template-columns: 1fr;
         gap: 35px;
-        padding: 45px 24px;
+        padding: 40px 24px 60px;
     }
     .work-item h2 {
-        font-size: 23px;
+        font-size: 24px;
         margin-top: 12px;
     }
     .gallery-page {
@@ -360,11 +383,11 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     }
     .gallery-page h1 {
         font-size: 28px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
     .slideshow {
         height: 50vh;
-        padding: 0 30px;
+        padding: 0 28px;
     }
     #gallery-photo {
         width: auto;
@@ -374,11 +397,11 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     }
     .gallery-arrow {
         font-size: 18px;
-        padding: 8px;
+        padding: 6px;
     }
     .thumbnails {
         gap: 8px;
-        margin-top: 15px;
+        margin-top: 18px;
     }
     .thumbnail {
         flex-basis: 55px;
@@ -386,21 +409,22 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
         height: 65px;
     }
     .contact-page {
-        padding: 45px 24px 60px;
+        padding: 40px 24px 60px;
     }
     .contact-page h1 {
         font-size: 30px;
+        margin-bottom: 25px;
     }
     .form-group label {
         font-size: 17px;
     }
     .form-group input {
-        height: 42px;
+        height: 44px;
     }
     .form-group textarea {
-        height: 110px;
+        height: 140px;
     }
     .contact-form button {
-        font-size: 17px;
+        font-size: 18px;
     }
 }
