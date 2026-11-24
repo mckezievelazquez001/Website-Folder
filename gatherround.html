@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gather Round | Mckenzie Velazquez</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="name">Mckenzie Velazquez</a>
+        <div class="nav-links">
+            <a href="artwork.html" class="active">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <main class="gallery-page">
+        <h1>Gather Round</h1>
+        <div class="slideshow">
+            <button class="gallery-arrow previous" onclick="changePhoto(-1)" aria-label="Previous photograph">&#10094;</button>
+            <img id="gallery-photo" src="72dpiiCollageGatherRoundMckenzieVelazquez1 copy.jpg" alt="Gather Round photographic collage">
+            <button class="gallery-arrow next" onclick="changePhoto(1)" aria-label="Next photograph">&#10095;</button>
+        </div>
+        <div class="thumbnails">
+            <button class="thumbnail selected" onclick="showPhoto(0)">
+                <img src="72dpiiCollageGatherRoundMckenzieVelazquez1 copy.jpg" alt="Collage 1">
+            </button>
+            <button class="thumbnail" onclick="showPhoto(1)">
+                <img src="72dpiCollageGatherRoundMckenzieVelazquez2 copy.jpg" alt="Collage 2">
+            </button>
+            <button class="thumbnail" onclick="showPhoto(2)">
+                <img src="72dpiCollageGatherRoundMckenzieVelazquez3 copy.jpg" alt="Collage 3">
+            </button>
+            <button class="thumbnail" onclick="showPhoto(3)">
+                <img src="72dpiiCollageGatherRoundMckenzieVelazquez4 copy.jpg" alt="Collage 4">
+            </button>
+            <button class="thumbnail" onclick="showPhoto(4)">
+                <img src="72dpiCollageGatherRoundMckenzieVelazquez5 copy.jpg" alt="Collage 5">
+            </button>
+            <button class="thumbnail" onclick="showPhoto(5)">
+                <img src="72dpiCollagesGatherRound6MckenzieVelaazquez copy.jpg" alt="Collage 6">
+            </button>
+        </div>
+        <a href="artwork.html" class="back-link">Back to Work</a>
+    </main>
+    <script>
+        const photos = [
+            "72dpiiCollageGatherRoundMckenzieVelazquez1 copy.jpg",
+            "72dpiCollageGatherRoundMckenzieVelazquez2 copy.jpg",
+            "72dpiCollageGatherRoundMckenzieVelazquez3 copy.jpg",
+            "72dpiiCollageGatherRoundMckenzieVelazquez4 copy.jpg",
+            "72dpiCollageGatherRoundMckenzieVelazquez5 copy.jpg",
+            "72dpiCollagesGatherRound6MckenzieVelaazquez copy.jpg"
+        ];
+        let currentPhoto = 0;
+        function showPhoto(index) {
+            currentPhoto = index;
+            document.getElementById("gallery-photo").src = photos[index];
+            document.querySelectorAll(".thumbnail").forEach(function(thumbnail, i) {
+                thumbnail.classList.toggle("selected", i === index);
+            });
+        }
+        function changePhoto(direction) {
+            currentPhoto = (currentPhoto + direction + photos.length) % photos.length;
+            showPhoto(currentPhoto);
+        }
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowLeft") changePhoto(-1);
+            if (event.key === "ArrowRight") changePhoto(1);
+        });
+    </script>
+</body>
+</html>
