@@ -61,13 +61,12 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 65px 30px 40px;
+    padding: 35px 30px 40px;
 }
 .home-photo {
-    width: auto;
+    width: 75%;
     height: auto;
-    max-width: 85%;
-    max-height: 70vh;
+    max-width: min(1400px, 114.8vh);
     object-fit: contain;
 }
 
@@ -332,11 +331,13 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
         font-size: 18px;
     }
     .home-page {
-        padding: 45px 24px 30px;
+        padding: 40px 20px 30px;
     }
     .home-photo {
+        width: 100%;
+        height: auto;
         max-width: 100%;
-        max-height: 70vh;
+        max-height: none;
     }
     .about-section {
         grid-template-columns: 1fr;
