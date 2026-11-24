@@ -76,42 +76,44 @@ a, p, h1, h2, h3, h4, h5, h6, span, div {
 }
 
 /* about */
+/* about */
 .about-section {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    column-gap: clamp(60px, 8vw, 140px);
-    padding: 65px var(--page-margin) 90px;
-    max-width: 1400px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: 70px;
+    width: 100%;
+    max-width: 1150px;
     margin: 0 auto;
-    align-items: start;
+    padding: 60px 40px 80px;
+    align-items: center;
 }
 .about-text {
     width: 100%;
-    max-width: 650px;
+    max-width: 550px;
     color: #111;
 }
 .about-text h1 {
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 400;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 .about-text p {
-    font-size: 21px;
+    font-size: 22px;
     font-weight: 400;
     line-height: 1.65;
-    margin-bottom: 28px;
-    max-width: 600px;
+    margin-bottom: 20px;
+    max-width: 100%;
 }
 .about-image {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-left: 0;
+    align-items: center;
+    padding: 0;
 }
 .about-image img {
     width: 100%;
-    max-width: 440px;
+    max-width: 420px;
     height: auto;
 }
 
